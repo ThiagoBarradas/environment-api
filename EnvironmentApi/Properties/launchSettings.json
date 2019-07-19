@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "EnvironmentApi": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "TestXX": "Some Value XX",
+        "testyy": "some value yy"
+      }
+    }
+  }
+}
