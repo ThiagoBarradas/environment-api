@@ -1,8 +1,9 @@
 variables:
   project_name: 'EnvironmentApi'
   netcore_version: '2.2'
-  sonarqube_project: 'ThiagoBarradas_environment-api'
-  sonarqube_account: 'SonarCloudBarradas'
+  sonarcloud_project: 'ThiagoBarradas_environment-api'
+  sonarcloud_organization: 'thiagobarradas-github'
+  sonarcloud_account: 'SonarCloudBarradas'
   docker_image_name: 'thiagobarradas/environment-api'
   docker_registry_account: 'DockerRegistryBarradas'
 
@@ -54,30 +55,29 @@ jobs:
       testResultsFiles: '$(System.DefaultWorkingDirectory)/$(project_name).Tests/results/result.xunit.xml'
       testRunTitle: 'Collecting Test Results'
 
-# - job: QualityAnalysis
-#   dependsOn: UnitTests
-#   steps:
-#   - task: DownloadPipelineArtifact@2
-#     displayName: Get Test Result
-#     inputs:
-#       artifact: UnitTestResults
-#   - task: SonarQubePrepare@4
-#     displayName: Start Sonarqube Analysis
-#     inputs:
-#       SonarQube: '$(sonarqube_account)'
-#       scannerMode: 'MSBuild'
-#       projectKey: '$(sonarqube_project)'
-#       projectName: '$(project_name)'
-#       extraProperties: 'sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml'
-#   - script: |
-#       dotnet build
-#     displayName: Runnig Build For Analysis
-#   - task: SonarQubeAnalyze@4
-#     displayName: Finish Sonarqube Analysis
-#   - task: SonarQubePublish@4
-#     displayName: Publish Sonarqube Analysis
-#     inputs:
-#       pollingTimeoutSec: '300'
+- job: QualityAnalysis
+  dependsOn: UnitTests
+  steps:
+  - task: DownloadPipelineArtifact@2
+    displayName: Get Test Result
+    inputs:
+      artifact: UnitTestResults
+  - task: SonarCloudPrepare@1
+    inputs:
+      SonarCloud: '$(sonarcloud_account)'
+      organization: '$(sonarcloud_organization)'
+      scannerMode: 'MSBuild'
+      projectKey: '$(sonarcloud_project)'
+      projectName: '$(project_name)'
+      extraProperties: 'sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml'
+  - script: |
+      dotnet build
+    displayName: Runnig Build For Analysis
+  - task: SonarCloudAnalyze@1
+    displayName: Finish Sonarqube Analysis
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'
 
 # - job: PublishDockerImage
 #   dependsOn: QualityAnalysis
