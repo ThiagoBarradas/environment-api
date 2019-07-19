@@ -40,7 +40,7 @@ Response:
 Please, refer to [CONTRIBUTING](.github/CONTRIBUTING.md)
 
 ## Found something strange or need a new feature?
-
+ 
 Open a new Issue following our issue template [ISSUE TEMPLATE](.github/ISSUE_TEMPLATE.md)
 
 ## Did you like it? Please, make a donate :)
