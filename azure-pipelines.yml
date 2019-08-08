@@ -1,6 +1,9 @@
 variables:
   project_name: 'EnvironmentApi'
   netcore_version: '2.2'
+  sonarcloud_project: 'ThiagoBarradas_environment-api'
+  sonarcloud_organization: 'thiagobarradas-github'
+  sonarcloud_account: 'SonarCloudBarradas'
 
 jobs:
 - job: Build
@@ -49,3 +52,27 @@ jobs:
       testResultsFormat: 'XUnit'
       testResultsFiles: '$(System.DefaultWorkingDirectory)/$(project_name).Tests/results/result.xunit.xml'
       testRunTitle: 'Collecting Test Results'
+
+- job: QualityAnalysis
+  dependsOn: UnitTests
+  steps:
+  - task: DownloadPipelineArtifact@2
+    displayName: Get Test Result
+    inputs:
+      artifact: UnitTestResults
+  - task: SonarCloudPrepare@1
+    inputs:
+      SonarCloud: '$(sonarcloud_account)'
+      organization: '$(sonarcloud_organization)'
+      scannerMode: 'MSBuild'
+      projectKey: '$(sonarcloud_project)'
+      projectName: '$(project_name)'
+      extraProperties: 'sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml'
+  - script: |
+      dotnet build
+    displayName: Runnig Build For Analysis
+  - task: SonarCloudAnalyze@1
+    displayName: Finish Sonarqube Analysis
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'
