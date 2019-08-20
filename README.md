@@ -3,7 +3,7 @@
 ![Sonar Violations (long format)](https://img.shields.io/sonar/violations/ThiagoBarradas_environment-api.svg?format=long&server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/ThiagoBarradas_environment-api.svg?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Coverage](https://img.shields.io/sonar/coverage/ThiagoBarradas_environment-api.svg?server=https%3A%2F%2Fsonarcloud.io)
-
+ 
 # Environment API
 
 A simple API that returns environment variables to use in talks, demos, etc;
