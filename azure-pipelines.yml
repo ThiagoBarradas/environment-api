@@ -7,6 +7,8 @@ variables:
   docker_image_name: 'thiagobarradas/environment-api'
   docker_registry_account: 'DockerRegistryBarradas'
 
+name: 1.0$(rev:.r)
+
 jobs:
 - job: Build
   steps:
