@@ -1,0 +1,751 @@
+
+Considere um projeto de software em .NET com a seguinte estrutura de arquivos:
+
+├── EnvironmentApi.sln
+├── README.md
+├── .github
+│   ├── CONTRIBUTING.md
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── ISSUE_TEMPLATE.md
+├── LICENSE
+├── Dockerfile
+├── EnvironmentApi
+│   ├── Controllers
+│   │   └── EnvironmentController.cs
+│   ├── EnvironmentApi.csproj
+│   ├── Properties
+│   │   └── launchSettings.json
+│   ├── appsettings.json
+│   └── Program.cs
+├── .gitignore
+├── .git
+│   ├── ORIG_HEAD
+│   ├── hooks
+│   │   ├── pre-rebase.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-receive.sample
+│   │   ├── pre-push.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   ├── commit-msg.sample
+│   │   ├── applypatch-msg.sample
+│   │   ├── pre-commit.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── HEAD
+│   ├── objects
+│   │   ├── pack
+│   │   │   ├── pack-53e097faed44ac599dcf34f57619dbfa75a16332.idx
+│   │   │   ├── pack-53e097faed44ac599dcf34f57619dbfa75a16332.rev
+│   │   │   └── pack-53e097faed44ac599dcf34f57619dbfa75a16332.pack
+│   │   └── info
+│   ├── FETCH_HEAD
+│   ├── branches
+│   ├── shallow
+│   ├── refs
+│   │   ├── heads
+│   │   │   └── master
+│   │   ├── remotes
+│   │   │   └── origin
+│   │   │       └── HEAD
+│   │   └── tags
+│   ├── config
+│   ├── description
+│   ├── packed-refs
+│   ├── info
+│   │   └── exclude
+│   └── logs
+│       ├── HEAD
+│       └── refs
+│           ├── heads
+│           │   └── master
+│           └── remotes
+│               └── origin
+│                   └── HEAD
+├── azure-pipelines.yml
+├── EnvironmentApi.Tests
+│   ├── EnvironmentControllerTest.cs
+│   └── EnvironmentApi.Tests.csproj
+└── .gitattributes 
+
+Após a linha ###ARQUIVOS### enviarei o diretorio/nome_do_arquivo e o conteúdo dos arquivos no seguinte formato:
+
+```
+# diretorio/nome_do_arquivo
+
+<#BEGINFILE#>
+
+conteúdo do arquivo
+
+<#ENDFILE#>
+```
+
+Lembre-se que irei enviar vários arquivos.
+
+###ARQUIVOS###
+
+    ```
+    # EnvironmentApi.sln
+
+    <#BEGINFILE#>
+
+    ﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnvironmentApi", "EnvironmentApi\EnvironmentApi.csproj", "{698B7260-0FA9-470F-8733-72F1D84864F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{293EFEC7-F812-4056-878C-4124C292380D}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Files", "GitHub Files", "{E760E143-9709-4E26-B5B1-9C056BC7B0DE}"
+	ProjectSection(SolutionItems) = preProject
+		.github\CONTRIBUTING.md = .github\CONTRIBUTING.md
+		.github\ISSUE_TEMPLATE.md = .github\ISSUE_TEMPLATE.md
+		LICENSE = LICENSE
+		.github\PULL_REQUEST_TEMPLATE.md = .github\PULL_REQUEST_TEMPLATE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvironmentApi.Tests", "EnvironmentApi.Tests\EnvironmentApi.Tests.csproj", "{D07AD68A-986B-4B26-9F1C-CA890E46E94F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{698B7260-0FA9-470F-8733-72F1D84864F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698B7260-0FA9-470F-8733-72F1D84864F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698B7260-0FA9-470F-8733-72F1D84864F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698B7260-0FA9-470F-8733-72F1D84864F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D07AD68A-986B-4B26-9F1C-CA890E46E94F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07AD68A-986B-4B26-9F1C-CA890E46E94F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07AD68A-986B-4B26-9F1C-CA890E46E94F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07AD68A-986B-4B26-9F1C-CA890E46E94F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E760E143-9709-4E26-B5B1-9C056BC7B0DE} = {293EFEC7-F812-4056-878C-4124C292380D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6ABFC245-E48A-44CA-8C13-302F1BB0D774}
+	EndGlobalSection
+EndGlobal
+
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # README.md
+
+    <#BEGINFILE#>
+
+    [![Build Status](https://barradas.visualstudio.com/Contributions/_apis/build/status/ThiagoBarradas.environment-api?branchName=master)](https://barradas.visualstudio.com/Contributions/_build/latest?definitionId=2&branchName=master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ThiagoBarradas_environment-api&metric=alert_status)](https://sonarcloud.io/dashboard?id=ThiagoBarradas_environment-api)
+![Sonar Violations (long format)](https://img.shields.io/sonar/violations/ThiagoBarradas_environment-api.svg?format=long&server=https%3A%2F%2Fsonarcloud.io)
+![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/ThiagoBarradas_environment-api.svg?server=https%3A%2F%2Fsonarcloud.io)
+![Sonar Coverage](https://img.shields.io/sonar/coverage/ThiagoBarradas_environment-api.svg?server=https%3A%2F%2Fsonarcloud.io)
+ 
+# Environment API
+
+A simple API that returns environment variables to use in talks, demos, etc;
+
+## Running with Docker
+
+Command to run Environment API (port 8088)
+
+```
+docker run --name environment-api -p 8088:80 -d thiagobarradas/environment-api:latest
+```
+
+## How to use
+
+Send a request to get environment variables:
+
+`GET environment/{environmentVariables}`
+
+You can send many values in `environmentVariables` separated by pipe like `VAR_X|VAR_Y|VAR_Z`;
+
+When some variable not exists, your value in response will be `[not found]`
+
+### Sample
+
+Request: 
+
+`GET environment/ASPNETCORE_ENVIRONMENT|OTHER_VAR`
+
+Response:
+
+```
+{
+  "ASPNETCORE_ENVIRONMENT": "Development",
+  "OTHER_VAR": "[not found]"
+}
+```
+
+## How can I contribute?
+Please, refer to [CONTRIBUTING](.github/CONTRIBUTING.md)
+
+## Found something strange or need a new feature?
+Open a new Issue following our issue template [ISSUE TEMPLATE](.github/ISSUE_TEMPLATE.md)
+
+## Did you like it? Please, make a donate :)
+
+if you liked this project, please make a contribution and help to keep this and other initiatives, send me some Satochis.
+
+BTC Wallet: `1G535x1rYdMo9CNdTGK3eG6XJddBHdaqfX`
+
+![1G535x1rYdMo9CNdTGK3eG6XJddBHdaqfX](https://i.imgur.com/mN7ueoE.png) 
+
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # .github/CONTRIBUTING.md
+
+    <#BEGINFILE#>
+
+    # Contributing
+
+First off, thanks for taking the time to contribute!
+
+### How can I contribute?
+
+* Fork this project;
+* Make your changes / new implementatios;
+* Use the pattern for git commts; 
+* Make sure that the acceptance criteria are met (tests, docs, etc);
+* Create a pull request;
+
+### Pull Requests
+
+Template [PULL_REQUEST_TEMPLATE](PULL_REQUEST_TEMPLATE.md)
+
+### Git Commit Messages
+
+* Use the present tense ("Adds feature" not "Added feature")
+* Limit the first line to 72 characters or less
+* Reference issues and pull requests liberally
+* Consider starting the commit message with an applicable emoji:
+    * :art: `:art:` when improving the format/structure of the code
+    * :racehorse: `:racehorse:` when improving performance
+    * :non-potable_water: `:non-potable_water:` when plugging memory leaks
+    * :memo: `:memo:` when writing docs
+    * :penguin: `:penguin:` when fixing something on Linux
+    * :apple: `:apple:` when fixing something on Mac OS
+    * :checkered_flag: `:checkered_flag:` when fixing something on Windows
+    * :bug: `:bug:` when fixing a bug
+    * :fire: `:fire:` when removing code or files
+    * :green_heart: `:green_heart:` when fixing the CI build
+    * :white_check_mark: `:white_check_mark:` when adding tests
+    * :lock: `:lock:` when dealing with security
+    * :arrow_up: `:arrow_up:` when upgrading dependencies
+    * :arrow_down: `:arrow_down:` when downgrading dependencies
+    * :shirt: `:shirt:` when removing linter warnings
+    * :bulb: `:bulb:` new idea
+    * :construction: `:construction:` work in progress
+    * :heavy_plus_sign: `:heavy_plus_sign:` when adding features
+    * :heavy_minus_sign: `:heavy_minus_sign:` when removing features
+    * :speaker: `:mute:` when adding logging
+    * :mute: `:mute:` when reducing logging
+    * :facepunch: `:facepunch:` when resolve conflict
+    * :wrench: `:wrench:` when modify Web.config
+
+
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # .github/PULL_REQUEST_TEMPLATE.md
+
+    <#BEGINFILE#>
+
+    ```
+This is a guide to use this Pull Request Template.
+
+# Title
+[feature] Implements the crazy powerful transaction search
+[hotfix] Fixes login with e-mail address
+
+Add a gif that expresses your reaction to the implemented code, make it fun
+
+DO NOT FORGET TO REMOVE THIS BLOCK
+```
+![Git Merge](https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif)
+
+### Status
+
+READY / IN DEVELOPMENT
+
+### Whats?
+
+Describe in an objective way what has been done.
+
+### Why?
+
+Why do you need this implementation/fix? 
+
+### How?
+
+How did you solve the problem? What are the main flows? Any technical information regarding infrastructure or architecture?
+
+### Attachments (if appropriate)
+
+Add additional informations like screenshots, issue link, zendesk ticket link, jira task link, etc
+
+### Definition of Done:
+- [ ] Increases API documentation
+- [ ] Implements integration tests
+- [ ] Implements unit tests
+- [ ] Is there appropriate logging included?
+- [ ] Does this add new dependencies?
+- [ ] Does need add new version in changelog?
+- [ ] Does need update readme, contributing, etc?
+- [ ] Does need change in CI server?
+- [ ] Will this feature require a new piece of infrastructure be implemented?
+- [ ] Does this PR require a blog post? If so, ensure marketing has signed off on content.
+
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # .github/ISSUE_TEMPLATE.md
+
+    <#BEGINFILE#>
+
+    ```
+Please use the following template to submit your issue. 
+Following this template will allow us to quickly investigate and help you with your issue. 
+Please be aware that issues which do not conform to this template may be closed. 
+
+DO NOT FORGET TO REMOVE THIS BLOCK
+```
+
+### Status
+
+BUG REPORT / TASK
+
+### Checklist
+
+Add checklist if this is a task
+
+- [x] Add slack integration
+- [_] Support xyz 
+
+### Steps
+
+1. First step
+2. Second step
+3. Third step
+
+### Expected behaviour
+
+How do you think the program should work? Add screenshots and code blocks if necessary.
+
+### Actual behaviour
+
+How does the program work in its current state?
+
+### Environment
+
+You may write here the specifications like the version of the project, services, operating system, or hardware if applicable.
+
+### Logs / Stack trace
+
+```
+Insert your log/stack trace here
+```
+
+
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # Dockerfile
+
+    <#BEGINFILE#>
+
+    ## APP BUILDER
+FROM microsoft/dotnet:2.2-runtime
+
+# Default Environment
+ENV ASPNETCORE_ENVIRONMENT="Development"
+ENV CURRENT_VERSION="__[Version]__"
+
+# Args
+ARG distFolder=EnvironmentApi/bin/Release/netcoreapp2.2
+ARG apiProtocol=http
+ARG apiPort=80
+ARG appFile=EnvironmentApi.dll
+ 
+# Copy files to /app
+RUN ls
+COPY ${distFolder} /app
+
+# Expose port for the Web API traffic
+ENV ASPNETCORE_URLS ${apiProtocol}://+:${apiPort}
+EXPOSE ${apiPort}
+
+# Run application
+WORKDIR /app
+RUN ls
+ENV appFile=$appFile
+ENTRYPOINT dotnet $appFile
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # EnvironmentApi/Controllers/EnvironmentController.cs
+
+    <#BEGINFILE#>
+
+    ﻿using Nancy;
+using Nancy.Scaffolding;
+using Nancy.Scaffolding.Modules;
+using System;
+using System.Collections.Generic;
+using WebApi.Models.Response;
+
+namespace EnvironmentApi.Controllers
+{
+    public class EnvironmentController : BaseModule
+    {
+        public EnvironmentController()
+        {
+            this.Get("", args => this.Home());
+            this.Get("environment/{envNames}", args => this.GetEnv(args.envNames));
+        }
+
+        public object Home()
+        {
+            return Response.AsText(Api.ApiBasicConfiguration.ApiName);
+        }
+
+        public object GetEnv(string envNames)
+        {
+            var envNamesArray = envNames?.Split('|') ?? new string[] { };
+            var defaultValue = "[not found]";
+            Dictionary<string, string> result = new Dictionary<string, string>();
+            foreach(var envName in envNamesArray)
+            {
+                try
+                {
+                    result[envName] = Environment.GetEnvironmentVariable(envName)
+                        ?? defaultValue;
+                }
+                catch(Exception)
+                {
+                    result[envName] = defaultValue;
+                }
+            }
+
+            return this.CreateJsonResponse(new ApiResponse
+            {
+                Content = result,
+                StatusCode = System.Net.HttpStatusCode.OK
+            });
+        }
+    }
+}
+
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # EnvironmentApi/EnvironmentApi.csproj
+
+    <#BEGINFILE#>
+
+    <Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JSON" Version="1.0.1" />
+    <PackageReference Include="Nancy" Version="2.0.0-clinteastwood" />
+    <PackageReference Include="Nancy.Scaffolding" Version="1.0.34" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
+
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # EnvironmentApi/Properties/launchSettings.json
+
+    <#BEGINFILE#>
+
+    {
+  "profiles": {
+    "EnvironmentApi": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "TestXX": "Some Value XX",
+        "testyy": "some value yy"
+      }
+    }
+  }
+}
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # EnvironmentApi/appsettings.json
+
+    <#BEGINFILE#>
+
+    {
+  "ApiSettings": {
+    "AppUrl": "http://localhost:80",
+    "JsonSerializer": "Snakecase",
+    "Domain": "BarradasDemo",
+    "Application": "EnvironmentApi",
+    "Version": "v1",
+    "SupportedCultures": [ "pt-BR", "es-ES", "en-US" ],
+    "DebugMode": false
+  },
+  "DbSettings": {
+    "ConnectionString": "",
+    "Name": ""
+  },
+  "LogSettings": {
+    "TitlePrefix": "[{Application}] ",
+    "JsonBlacklist": [ "*password", "*card.number", "*creditcardnumber", "*cvv" ],
+    "SeqOptions": {
+      "Enabled": false
+    },
+    "SplunkOptions": {
+      "Enabled": false
+    }
+  },
+  "DocsSettings": {
+    "Enabled": false
+  }
+}
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # EnvironmentApi/Program.cs
+
+    <#BEGINFILE#>
+
+    ﻿using Nancy.Scaffolding;
+using Nancy.Scaffolding.Models;
+
+namespace EnvironmentApi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var config = new ApiBasicConfiguration
+            {
+                ApiName = "Environment API - ",
+                ApiPort = 80,
+                EnvironmentVariablesPrefix = ""
+            };
+
+            Api.Run(config);
+        }
+    }
+}
+
+
+    <#ENDFILE#>
+    ```
+    
+    ```
+    # azure-pipelines.yml
+
+    <#BEGINFILE#>
+
+    variables:
+  project_name: 'EnvironmentApi'
+  netcore_version: '2.2'
+  sonarcloud_project: 'ThiagoBarradas_environment-api'
+  sonarcloud_organization: 'thiagobarradas-github'
+  sonarcloud_account: 'SonarCloudBarradas'
+  docker_image_name: 'thiagobarradas/environment-api'
+  docker_registry_account: 'DockerRegistryBarradas'
+
+name: 1.0$(rev:.r)
+
+jobs:
+- job: Build
+  steps:
+  - script: |
+      pwd && ls -la
+      dotnet restore 
+      dotnet publish -c Release -o bin/Release/netcoreapp$(netcore_version)
+      mkdir artifact
+      cp -r $(project_name)/bin/Release/netcoreapp$(netcore_version) artifact/$(Build.SourceBranchName)
+    displayName: Build Application
+  - task: PublishPipelineArtifact@1
+    displayName: Store Application Artifact
+    inputs:
+      path: $(System.DefaultWorkingDirectory)/artifact
+      artifact: $(project_name)
+
+- job: UnitTests
+  dependsOn: Build
+  steps:
+  - script: |
+      dotnet tool install --global coverlet.console 
+      dotnet add $(project_name).Tests/$(project_name).Tests.csproj package coverlet.msbuild
+      dotnet add $(project_name).Tests/$(project_name).Tests.csproj package XunitXml.TestLogger
+      dotnet test /p:CollectCoverage=true \
+                  /p:CoverletOutputFormat=\"opencover,cobertura\" \
+                  /p:CoverletOutput=results/result \
+                  /p:Exclude=[xunit.*]* $(project_name).sln \
+                  --test-adapter-path:. --logger:"xunit;LogFilePath=results/result.xunit.xml"
+    displayName: Running Unit Tests
+  - task: PublishPipelineArtifact@1
+    displayName: Store Test Result
+    inputs:
+      path: $(System.DefaultWorkingDirectory)/$(project_name).Tests/results
+      artifact: UnitTestResults
+  - task: PublishCodeCoverageResults@1
+    displayName: Publish Code Coverage 
+    inputs:
+      codeCoverageTool: 'Cobertura'
+      summaryFileLocation: $(System.DefaultWorkingDirectory)/$(project_name).Tests/results/result.cobertura.xml
+      pathToSources: .
+      failIfCoverageEmpty: true
+  - task: PublishTestResults@2
+    displayName: Publish Test Result
+    inputs:
+      testResultsFormat: 'XUnit'
+      testResultsFiles: '$(System.DefaultWorkingDirectory)/$(project_name).Tests/results/result.xunit.xml'
+      testRunTitle: 'Collecting Test Results'
+
+- job: QualityAnalysis
+  dependsOn: UnitTests
+  steps:
+  - task: DownloadPipelineArtifact@2
+    displayName: Get Test Result
+    inputs:
+      artifact: UnitTestResults
+  - task: SonarCloudPrepare@1
+    inputs:
+      SonarCloud: '$(sonarcloud_account)'
+      organization: '$(sonarcloud_organization)'
+      scannerMode: 'MSBuild'
+      projectKey: '$(sonarcloud_project)'
+      projectName: '$(project_name)'
+      extraProperties: 'sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml'
+  - script: |
+      dotnet build
+    displayName: Runnig Build For Analysis
+  - task: SonarCloudAnalyze@1
+    displayName: Finish Sonarqube Analysis
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'
+
+- job: PublishDockerImage
+  dependsOn: QualityAnalysis
+  condition:  and(succeeded(), variables['Build.SourceBranch'], 'refs/heads/master')
+  variables:
+    Version: '$(Build.BuildNumber)'
+  steps:
+  - task: DownloadPipelineArtifact@2
+    displayName: Get Application Artifact
+    inputs:
+      artifact: $(project_name)
+  - script: |
+      mkdir -p $(project_name)/bin/Release
+      cp -r $(Pipeline.Workspace)/$(Build.SourceBranchName) $(project_name)/bin/Release/netcoreapp$(netcore_version)
+    displayName: Prepare Files
+  - task: replacetokens@3
+    inputs:
+      targetFiles: 'Dockerfile'
+      encoding: 'auto'
+      writeBOM: true
+      verbosity: 'detailed'
+      actionOnMissing: 'warn'
+      keepToken: true
+      tokenPrefix: '__['
+      tokenSuffix: ']__'
+    displayName: Add Version as Env Var
+  - task: Docker@2
+    displayName: 'Build and Publish Docker Image'
+    inputs:
+      containerRegistry: '$(docker_registry_account)'
+      repository: '$(docker_image_name)'
+      command: 'buildAndPush'
+      Dockerfile: '$(System.DefaultWorkingDirectory)/Dockerfile'
+      buildContext: '$(System.DefaultWorkingDirectory)'
+      tags: |
+        $(Version)
+        latest
+
+
+
+
+
+    <#ENDFILE#>
+    ```
+    
+Você poderia me fornecer testes de integração (utilizando um fake browser do xUnit) para cobrir todos os possíveis fluxos do código?
+
+Você deve fornecer todos os arquivos necessários para rodar o código, incluindo o arquivo de projeto .csproj com suas dependencias e o caminho perfeito para cada arquivo, considerando que o projeto está em um diretório com sufixo IntegrationTests.
+
+Na primeira linha você deve informar o nome do diretório base no seguinte formato:
+Directory: `ExampleProject.IntegrationTests`
+
+Para cada arquivo você deve fornecer o nome e na linha seguinte o conteúdo de cada arquivo. Por exemplo:
+
+ExampleProject.IntegrationTests/SampleControllerIntegrationTests.cs
+
+```<filetype>
+//BEGINFILEHERE##
+
+// some code
+
+//ENDFILEHERE##
+```
+
+ExampleProject.IntegrationTests/OtherControllerIntegrationTests.cs
+```<filetype>
+//BEGINFILEHERE##
+
+// other code 
+
+//ENDFILEHERE##
+```
+
+Importante:
+- O nome do diretório base deve ser substituído pelo nome mais adequado baseado no projeto. Por exemplo, se o nome do projeto for `CommerceAPI` então o diretório base deve ser substituído por `CommerceAPI`.IntegrationTests`. O nome não deve possuir outro Sufixo além de IntegrationTests
+- A parte `<filetype>` deve ser substituida pelo tipo do arquivo, por exemplo `csharp`, `xml`, `cs` etc
+
